@@ -44,36 +44,28 @@ def myClean():
     new_quote = ' '.join(quote.split())
     print(new_quote)
 
+my_input_list = list(input1)
 def myTitle():
     x=0
-    print(x)
-    while x<len(input1):
+    while x<len(my_input_list):
         print(x)
-        if input1[0]:
-            for key, value in upper_dictionnary.items():
-                if input1[0] == key:
-                    print(value, end="")    
-                    x+=1 
-                else:  
-                    print(key, end="")    
-                    x+=1      
+        for key, value in upper_dictionnary.items():
+            if my_input_list[0] == key:
+                my_input_list[0] = value
+                print(value, end="")    
+                x+=1 
+            elif my_input_list[x-1] == " ": 
+                my_input_list[x] = value
+                print(value, end="")
+                x+=1
+            elif my_input_list[x] == key:
+                my_input_list[x] = key
+                print(key, end="")
+                x+=1
+        
+        x+=1         
                
-        elif input1[x-1] == " ":
-            for key, value in upper_dictionnary.items():
-                if input1[x] == key:
-                    print(value, end="")    
-                    x+=1
-                else:  
-                    print(key, end="")    
-                    x+=1         
-                       
-         
-        else:
-            for key, value in upper_dictionnary.items():
-                if input1[x] == value:
-                    print(key, end="")     
-                    x+=1
-                
+       
                  
                        
    
